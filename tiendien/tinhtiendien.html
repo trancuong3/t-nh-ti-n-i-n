@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền điện </title>
+</head>
+<body>
+<b><h2 >nhập tiền điện cũ</h2></b>
+<label><input type="number" id="tiendiencu"></label>
+<b><h2>nhập tiền điện mới</h2></b><br>
+<label><input type="number" id="tiendienmoi"></label>
+<button onclick="tiendien()">kiểm tra tiền điện</button>
+
+<p id="result"></p>
+</body>
+<script>
+    function tiendien()
+    {
+        let a = parseFloat(document.getElementById("tiendiencu").value);
+        let b = parseFloat(document.getElementById("tiendienmoi").value);
+        let c = b-a;
+        let  resultElement=document.getElementById("result");
+        if(c>0&&c<=50)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*1.549).toFixed(2)+("VND");
+        }
+        if(c>50&&c<=100)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*1.6).toFixed(2)+("VND");
+        }
+        if(c>100&&c<=200)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*1.858).toFixed(2)+("VND");
+        }
+        if(c>200&&c<=300)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*2.34).toFixed(2)+("VND");
+        }
+        if(c>300&&c<=400)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*2.615).toFixed(2)+("VND");
+        }
+        if(c>401)
+        {
+            resultElement.innerHTML=("số tiền bạn phải trả là : ")+(c*2.701).toFixed(2)+("VND");
+        }
+
+
+    }
+</script>
+</html>
